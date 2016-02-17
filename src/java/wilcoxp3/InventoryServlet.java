@@ -16,22 +16,22 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author wilcoxp3
  */
-@WebServlet("/hello")
+@WebServlet("/inventory")
 public class InventoryServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String html = "<!DOCTYPE><html><body><h1>Hello</h1><h3>"
-                + req.getRemoteAddr() + "</h3></body></html>";
+        String usersName = "World";
+        String html = "<!DOCTYPE><html><body><h1>Hello</h1></body></html>";
         resp.getWriter().println(html);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String usersName = req.getParameter("usersName");
-        
-        String html = "<!DOCTYPE><html><body><h1>Hello</h1><h3>"
-                + usersName + "</h3></body></html>";
+
+        String html = "<!DOCTYPE><html><body><h1>Hello&nbsp"
+                + usersName + "</h1></body></html>";
         resp.getWriter().println(html);
     }
 
