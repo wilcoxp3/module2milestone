@@ -23,10 +23,14 @@ public class InventoryServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String usersName = req.getParameter("usersName");
+        String upc = req.getParameter("upc");
+        String shortDetails = req.getParameter("shortDetails");
+        String longDetails = req.getParameter("longDetails");
+        String price = req.getParameter("price");
+        String stock = req.getParameter("stock");
 
         String html = "<!DOCTYPE><html><body><h1>Hello&nbsp"
-                + usersName + "</h1></body></html>";
+                + upc + shortDetails + longDetails + price + stock + "</h1></body></html>";
         resp.getWriter().println(html);
     }
 
