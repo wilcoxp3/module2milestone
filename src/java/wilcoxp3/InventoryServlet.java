@@ -16,22 +16,21 @@ public class InventoryServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String usersName = "World";
-        String html = "<!DOCTYPE><html><body><h1>Hello</h1></body></html>";
-        resp.getWriter().println(html);
+        resp.getWriter().println("<!DOCTYPE html><html><head></head><body>");
+        InventoryManager invMan = new InventoryManager();
+        for (Product p : invMan.getProductList()) {
+            resp.getWriter().println(p);
+        }
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         String upc = req.getParameter("upc");
         String shortDetails = req.getParameter("shortDetails");
         String longDetails = req.getParameter("longDetails");
         String price = req.getParameter("price");
         String stock = req.getParameter("stock");
-
-        String html = "<!DOCTYPE><html><body><h1>Hello&nbsp"
-                + upc + shortDetails + longDetails + price + stock + "</h1></body></html>";
-        resp.getWriter().println(html);
     }
 
 }
