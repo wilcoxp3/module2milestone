@@ -30,12 +30,15 @@ public class InventoryServlet extends HttpServlet {
         String upc = req.getParameter("upc");
         String shortDetails = req.getParameter("shortDetails");
         String longDetails = req.getParameter("longDetails");
-        String price = req.getParameter("price");
-        String stock = req.getParameter("stock");
+        BigDecimal price = new BigDecimal(req.getParameter("price"));
+        Integer stock = new Integer(req.getParameter("stock"));
+        
         Product p = new Product();
         p.setUpc(upc);
         p.setShortDetails(shortDetails);
         p.setLongDetails(longDetails);
+        p.setPrice(price);
+        p.setStock(Integer.SIZE);
     }
 
 }
