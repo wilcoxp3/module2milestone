@@ -38,7 +38,11 @@ public class InventoryServlet extends HttpServlet {
         p.setShortDetails(shortDetails);
         p.setLongDetails(longDetails);
         p.setPrice(price);
-        p.setStock(Integer.SIZE);
+        p.setStock(stock);
+        
+        InventoryManager invMan = new InventoryManager();
+        
+        
     }
 
 }
