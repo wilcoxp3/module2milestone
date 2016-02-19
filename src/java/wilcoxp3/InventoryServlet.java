@@ -1,6 +1,7 @@
 package wilcoxp3;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,7 +20,7 @@ public class InventoryServlet extends HttpServlet {
         resp.getWriter().println("<!DOCTYPE html><html><head></head><body>");
         InventoryManager invMan = new InventoryManager();
         for (Product p : invMan.getProductList()) {
-            resp.getWriter().println(p);
+            resp.getWriter().println(p.getUpc() + "&nbsp;" + p.getShortDetails() + "<br>");
         }
     }
 
@@ -31,6 +32,10 @@ public class InventoryServlet extends HttpServlet {
         String longDetails = req.getParameter("longDetails");
         String price = req.getParameter("price");
         String stock = req.getParameter("stock");
+        Product p = new Product();
+        p.setUpc(upc);
+        p.setShortDetails(shortDetails);
+        p.setLongDetails(longDetails);
     }
 
 }
