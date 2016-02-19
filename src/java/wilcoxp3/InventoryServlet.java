@@ -17,6 +17,7 @@ public class InventoryServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        
         resp.getWriter().println("<!DOCTYPE html><html><head></head><body>");
         InventoryManager invMan = new InventoryManager();
         for (Product p : invMan.getProductList()) {
@@ -41,7 +42,7 @@ public class InventoryServlet extends HttpServlet {
         p.setStock(stock);
         
         InventoryManager invMan = new InventoryManager();
-        
+        invMan.addProduct(p);
         
     }
 
