@@ -109,8 +109,14 @@ public class Product implements Comparable<Product>, Serializable {
     public int compareTo(Product p) {
         return this.getUpc().compareToIgnoreCase(p.getUpc());
     }
-    
-        @Override
+
+    /**
+     * This method returns the value of each field in a string formatted for
+     * viewing in a web browser.
+     *
+     * @return string
+     */
+    @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append("UPC: ");
