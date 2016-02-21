@@ -9,9 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * This servlet overrides the doGet and doPost methods of inventory servlet in
- * order to add and save new products to the product inventory, and to display a
- * list of all saved products.
+ * InventoryServlet overrides doGet and doPost in order to add and save new
+ * products to the product inventory, and to display a list of all saved
+ * products.
  *
  * @author wilcoxp3
  */
@@ -39,7 +39,7 @@ public class InventoryServlet extends HttpServlet {
 
     /**
      * This method adds a new product to the inventory with the data taken from
-     * the inventoryForm page. It then calls the doGet method in order to 
+     * the inventoryForm page. It then calls the doGet method in order to
      * display the saved products upon form submittal.
      *
      * @param req
