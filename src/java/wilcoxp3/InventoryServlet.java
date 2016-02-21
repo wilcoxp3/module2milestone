@@ -34,7 +34,7 @@ public class InventoryServlet extends HttpServlet {
         for (Product p : invMan.getProductList()) {
             resp.getWriter().println(p.toString());
         }
-        resp.getWriter().println("</body>");
+        resp.getWriter().println("</body></html>");
     }
 
     /**
