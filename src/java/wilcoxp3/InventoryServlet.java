@@ -21,8 +21,9 @@ public class InventoryServlet extends HttpServlet {
         resp.getWriter().println("<!DOCTYPE html><html><head></head><body>");
         InventoryManager invMan = new InventoryManager();
         for (Product p : invMan.getProductList()) {
-            resp.getWriter().println(p.getUpc() + "&nbsp;" + p.getShortDetails() + "<br>");
+            resp.getWriter().println(p.toString());
         }
+        resp.getWriter().println("</body>");
     }
 
     @Override
@@ -44,6 +45,6 @@ public class InventoryServlet extends HttpServlet {
         InventoryManager invMan = new InventoryManager();
         invMan.addProduct(p);
         
+        this.doGet(req, resp);
     }
-
 }

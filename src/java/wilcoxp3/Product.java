@@ -109,4 +109,21 @@ public class Product implements Comparable<Product>, Serializable {
     public int compareTo(Product p) {
         return this.getUpc().compareToIgnoreCase(p.getUpc());
     }
+    
+        @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("UPC: ");
+        builder.append(this.getUpc());
+        builder.append("<br>Short Details: ");
+        builder.append(this.getShortDetails());
+        builder.append("<br>Long Details: ");
+        builder.append(this.getLongDetails());
+        builder.append("<br>Price: ");
+        builder.append(this.getPrice());
+        builder.append("<br>Stock: ");
+        builder.append(this.getStock());
+        builder.append("<br><br>");
+        return builder.toString();
+    }
 }
